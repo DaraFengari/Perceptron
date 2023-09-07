@@ -8,7 +8,6 @@ def leer_patrones(filename):
     with open(filename, mode='r', newline='') as file:
         csv_reader = csv.reader(file)
         for row in csv_reader:
-            # Suponemos que las entradas están en las primeras columnas y las salidas en la última columna
             entradas.append([float(x) for x in row[:-1]])
             salidas.append(float(row[-1]))
     return np.array(entradas), np.array(salidas)
